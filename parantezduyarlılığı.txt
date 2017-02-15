@@ -1,0 +1,28 @@
+
+#include<iostream>
+#include<stack>
+#include<string>
+#include<conio.h> 
+using namespace std;
+/*string bir ifadede açılan ve kapanan parantez sayılarına göre parantez hatası olup olmadığını
+ stack veri yapısı kullanarak bulan fonksiyon*/
+int hata_var(string ifade){
+     stack<char> S;
+     int sayi;
+	for(int i = 0;i< ifade.length();i++) {
+ 		if(ifade[i] == '(' || ifade[i] == '[') sayi++;
+        else if(ifade[i] == ']' || ifade[i] == ')') sayi--;}
+        return sayi;
+    // if(!S.empty()) return true; else return false;
+     //true sonucu dönerse hata var, false sonucu dönerse hata yok demektir... 
+          }
+int main(){
+string ifade="";
+cout<<"\n ifadenizi giriniz:";
+cin>>ifade;	
+if(hata_var(ifade)==0)  
+              cout<<"ifadede parantez hatası yok...";  
+                     else if(hata_var>0) cout<<"ifadede parantez kapatmamissin...";
+                    else cout<<"ifadede parantez acmamissin...";
+
+       cout<<"\n devam icin bir tusa basiniz..."; getch();}
